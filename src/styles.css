@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.container{
+    padding:2em;
+}
+.row{
+    margin-bottom:15px;
+}
+
+.horizontal-ruling{
+    border:1px solid #454545;
+}

@@ -1,0 +1,37 @@
+<h3>Add New Well</h3>
+
+<form #f="ngForm" (ngSubmit)="addWell(f)">
+
+  <div class="row">
+    <div class="col-xs-8">
+    <label for="newWellName">
+      Well name
+      <input type="text" class="form-control" name="newWellName" [(ngModel)]="newWellNameModel">
+    </label>
+  </div>
+  </div>
+  
+<div class="row">
+  <div class="col-xs-8">
+  <label for="newWellType">
+    Well Type (special/common/other...)
+    <input type="text" class="form-control" name="newWellType" [(ngModel)]="newWellTypeModel">
+  </label>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-8">
+  <label for="newWellSourceKey">
+    SourceKey
+    <input type="text" disabled class="form-control" name="newWellSourceKey" [(ngModel)]="newWellSourceKeyModel">
+  </label>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-8">
+  <button class="btn btn-success" type="submit">Add Well</button>
+</div>
+</div>
+</form>

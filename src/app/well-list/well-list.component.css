@@ -1,0 +1,10 @@
+.common-well{
+    background-color: #567677;
+}
+.special-well{
+    background-color: #56FF77;
+}
+.section-vertical-left{
+    padding-right: 2em;
+    border-right: 1px solid #333;
+}

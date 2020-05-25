@@ -1,0 +1,36 @@
+<div class="row">
+  <h2>POC 2</h2>
+</div>
+<div class="row">
+  <div class="section-vertical-left col-xs-6">
+    <div class="row">
+      <div class="">
+        <h2>Available Well Details</h2>
+      <table class="table table-bordered table-condensed">
+        <thead>
+          <tr class="info">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Source</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let wellItem of wellsData">
+            <td>{{wellItem.name}}</td>
+            <td [ngClass]="{'special-well':wellItem.type=='special','common-well':wellItem.type=='common'}"
+                [ngStyle]="{'color':wellItem.type=='special'?'#567677':'#56FF77'}"
+              >
+              {{wellItem.type}}
+            </td>
+            <td>{{wellItem.sourceKey}}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-vertical col-xs-6">
+    <well (addWellData)="addWellToList($event)"></well>
+  </div>
+</div>
