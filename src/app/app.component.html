@@ -1,5 +1,22 @@
 <div class="container">
-  <users></users>
-  <hr class="horizontal-ruling">
-  <well-list></well-list>
+
+  <ul class="nav nav-tabs">
+    <li><a data-toggle="tab" href="#poc1">POC 1</a></li>
+    <li><a data-toggle="tab" href="#poc2">POC 2</a></li>
+    <li class="active"><a data-toggle="tab" href="#poc3">POC 3</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="poc1" class="tab-pane fade">
+      <users></users>
+    </div>
+    <div id="poc2" class="tab-pane fade">
+      <well-list></well-list>
+    </div>
+    <div id="poc3" class="tab-pane fade in active">
+      <webapp-builder></webapp-builder>
+    </div>
+  </div>
+
+
 </div>

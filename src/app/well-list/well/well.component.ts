@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -9,16 +9,17 @@ import { NgForm } from '@angular/forms';
 export class WellComponent implements OnInit {
 
   private f:NgForm;
+  @Input() sourceKeyMapInput;
   @Output() addWellData : any = new EventEmitter();
+  @ViewChild('f') formElementRef : ElementRef;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  addWell(wellForm){
-    console.log(wellForm.value);
-    this.addWellData.emit(wellForm.value);
+  addWell(){
+    this.addWellData.emit(this.formElementRef["value"]);
   }
 
 }

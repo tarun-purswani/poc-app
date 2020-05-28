@@ -1,0 +1,27 @@
+.element-list-header{
+    padding: 1em 0;
+    border-bottom: 1px solid #ccc;
+}
+.element-list-item{
+    padding: 1em;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+    cursor: pointer;
+}
+.element-list-item:hover{
+    background-color: palegreen;
+    font-weight: bold;
+}
+.element-list{
+    padding:1em;
+}
+.vertical-section-right{
+    background-color: paleturquoise;
+    border-left: 1px solid #444;
+}
+.grid-unit{
+    margin:5px;
+    border:1px solid #aaa;
+    padding:10px;
+    height: 100px;
+}

@@ -1,12 +1,12 @@
 <h3>Add New Well</h3>
 
-<form #f="ngForm" (ngSubmit)="addWell(f)">
+<form #f="ngForm" (ngSubmit)="addWell()">
 
   <div class="row">
     <div class="col-xs-8">
     <label for="newWellName">
       Well name
-      <input type="text" class="form-control" name="newWellName" [(ngModel)]="newWellNameModel">
+      <input type="text" class="form-control" required name="newWellName" [(ngModel)]="newWellNameModel">
     </label>
   </div>
   </div>
@@ -15,7 +15,7 @@
   <div class="col-xs-8">
   <label for="newWellType">
     Well Type (special/common/other...)
-    <input type="text" class="form-control" name="newWellType" [(ngModel)]="newWellTypeModel">
+    <input type="text" class="form-control" required name="newWellType" [(ngModel)]="newWellTypeModel">
   </label>
 </div>
 </div>
@@ -24,14 +24,14 @@
   <div class="col-xs-8">
   <label for="newWellSourceKey">
     SourceKey
-    <input type="text" disabled class="form-control" name="newWellSourceKey" [(ngModel)]="newWellSourceKeyModel">
+    <input type="text" disabled class="form-control" name="newWellSourceKey" [(ngModel)]="sourceKeyMapInput">
   </label>
 </div>
 </div>
 
 <div class="row">
   <div class="col-xs-8">
-  <button class="btn btn-success" type="submit">Add Well</button>
+  <button class="btn btn-success" [disabled]="(!formElementRef.valid && formElementRef.dirty) || !formElementRef.dirty" type="submit">Add Well</button>
 </div>
 </div>
 </form>

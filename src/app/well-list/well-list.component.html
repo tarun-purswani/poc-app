@@ -1,11 +1,10 @@
-<div class="row">
-  <h2>POC 2</h2>
-</div>
+
 <div class="row">
   <div class="section-vertical-left col-xs-6">
     <div class="row">
       <div class="">
         <h2>Available Well Details</h2>
+
       <table class="table table-bordered table-condensed">
         <thead>
           <tr class="info">
@@ -18,7 +17,7 @@
           <tr *ngFor="let wellItem of wellsData">
             <td>{{wellItem.name}}</td>
             <td [ngClass]="{'special-well':wellItem.type=='special','common-well':wellItem.type=='common'}"
-                [ngStyle]="{'color':wellItem.type=='special'?'#567677':'#56FF77'}"
+                [ngStyle]="{'color':wellItem.type=='special'?'#567677':'#56FF77','color':wellItem.type=='common'?'#56FF77':''}"
               >
               {{wellItem.type}}
             </td>
@@ -26,11 +25,19 @@
           </tr>
         </tbody>
       </table>
+
+      <label>
+        Select New Source Key 
+      </label>
+      <label class="block-display" *ngFor="let skey of sourceKeyMap" >
+        <input type="radio" name="radio-source-key-map" [value]="skey" [(ngModel)]="sourceKeySelected">
+        {{skey}}
+      </label>
       </div>
     </div>
   </div>
 
   <div class="section-vertical col-xs-6">
-    <well (addWellData)="addWellToList($event)"></well>
+    <well [sourceKeyMapInput]="sourceKeySelected" (addWellData)="addWellToList($event)"></well>
   </div>
 </div>

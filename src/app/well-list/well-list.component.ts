@@ -13,6 +13,7 @@ export class WellListComponent implements OnInit {
     "1001001",
     "1001001001"
   ];
+  private sourceKeySelected = this.sourceKeyMap[0];
 
   private wellsData = [
     {name:"Well One",type:"common",sourceKey: this.sourceKeyMap[0]},
@@ -29,7 +30,7 @@ export class WellListComponent implements OnInit {
     this.wellsData.push({
       name:newWellData.newWellName,
       type:newWellData.newWellType,
-      sourceKey:newWellData.newWellSourceKey
+      sourceKey: this.sourceKeySelected
     });
   }
 

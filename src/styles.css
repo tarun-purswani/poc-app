@@ -9,3 +9,10 @@
 .horizontal-ruling{
     border:1px solid #454545;
 }
+
+.block-display{
+    display:block;
+}
+.nav.nav-tabs li.active{
+    font-weight: bold;
+}

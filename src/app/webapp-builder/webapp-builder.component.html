@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-9 vertical-section-left">
+   
+  <div class="row grid-of-elements">
+      <div *ngFor="let box of gridEmptyDivs; index as i" 
+            (drop)="drop($event)" 
+            (dragover)="allowDrop($event)"
+            class="grid-unit grid-unit-{{i}} col-xs-3"
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3 vertical-section-right">
+    <div class="element-list-header">
+      <h3>Drag an element from the list to left side!</h3>
+    </div>
+    <ul class="element-list">
+      <div class="element-list-item element-list-item-{{item.label}}"
+          id="element-list-item-{{item.label}}" 
+          [ngClass]="{'disabled':!item.available}" 
+          *ngFor="let item of availableElements"
+          draggable="true"
+          (dragstart)="drag($event,item.label)"
+        >
+        {{item.label}}
+      </div>
+    </ul>
+  </div>
+</div>
