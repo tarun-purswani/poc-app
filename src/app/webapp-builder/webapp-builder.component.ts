@@ -27,9 +27,13 @@ export class WebappBuilderComponent implements OnInit {
 
   drop(ev) {
     ev.preventDefault();
+    
+    //If we want element to element copy, following would have been the code
     //var data = ev.dataTransfer.getData("text");
     //var nodeCopy = document.getElementById(data).cloneNode(true);
     
+    // But since we are dragging from a list of names of html components,
+    // we just need to capture type of element needed
     var nodeCopy = this.componentGenSvc.metaDataMap[this.draggedElement];
     ev.target.innerHTML = nodeCopy;
     this.draggedElement = "";
