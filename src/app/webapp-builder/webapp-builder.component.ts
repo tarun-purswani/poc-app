@@ -45,6 +45,11 @@ export class WebappBuilderComponent implements OnInit {
 
   drag(ev,metaData) {
     this.draggedElement = metaData;
+
+    // in case of element-to-element copy creation,
+    // we will take id of element with help of method ev.dataTransfer.setData to copy the node,
+    // and THEN append it wherever it is dropped by user, using the ev.dataTransfer.getData method, which will be part of drop operation
+
     //ev.dataTransfer.setData("text", ev.target.id);
   }
 
